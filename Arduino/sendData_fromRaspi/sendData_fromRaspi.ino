@@ -1,6 +1,7 @@
 
 /*
- switch LED ON/OFF from Raspi 
+ Bi-directional communication
+ Receive LED ON OFF command from Raspi, to the task, send a response to Raspi which it can process.   
 */
 
 
@@ -24,10 +25,12 @@ void loop()
    if(message=="ON")
    {
      digitalWrite(LED, 50);
+     Serial.write("success");
    }
    else if(message=="OFF")
    {
     digitalWrite(LED,0);
+    Serial.write("fail");
    }
 	
  }
